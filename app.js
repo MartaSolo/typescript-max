@@ -4,49 +4,34 @@
 //   name: "Marta",
 //   age: 38,
 // };
-// console.log(person.name);
-// Defining an object by  :{}
-// const person: {} = {
-//   name: "Marta",
-//   age: 38,
-// };
-// console.log(person.name);
-// Defining an object by  :{} and typing the keys:
-// const person: { name: string; age: number } = {
-//   name: "Marta",
-//   age: 38,
-// };
-// console.log(person.name); // Marta
-// console.log(person.age); // 38
-// nested object with types
-// const product: {
-//   id: string;
-//   price: number;
-//   tags: string[];
-//   details: {
-//     title: string;
-//     description: string;
-//   };
-// } = {
-//   id: "abc1",
-//   price: 12.99,
-//   tags: ["great-offer", "hot-and-new"],
-//   details: {
-//     title: "Red Carpet",
-//     description: "A great carpet - almost brand-new!",
-//   },
-// };
-// ------------- arrays ------------------
-var person = {
-    name: "Marta",
-    age: 38,
-    hobbies: ["programming", "hiking", "photography"]
-};
-var favourites;
-favourites = ["sport", 22];
-console.log(favourites); // ['sport', 22]
-// favourites = ["sport", 22, true];
-// // Type '[string, number, boolean]' is not assignable to type '[string, number]'.
-// //   Source has 3 element(s) but target allows only 2.
-favourites.push("photo");
-console.log(favourites); // ['sport', 22, 'photo']
+var messsage; // same as string type
+var input;
+input = 100; // valid
+input = "Hi"; // valid
+function combine(input1, input2) {
+    // function combine(input1: number | string, input2: number | string) {
+    var result;
+    if (typeof input1 === "number" && typeof input2 === "number") {
+        result = input1 + input2;
+    }
+    else {
+        result = input1.toString() + input2.toString();
+    }
+    return result;
+}
+console.log(combine("Max", "Anna")); // MaxAnna
+console.log(combine(8, 12)); // 20
+var u1 = { name: "Max", age: 30 }; // this works!
+// we can simplufy this code:
+function greet(user) {
+    console.log("Hi, I am " + user.name);
+}
+function isOlder(user, checkAge) {
+    return checkAge > user.age;
+}
+function greet(user) {
+    console.log("Hi, I am " + user.name);
+}
+function isOlder(user, checkAge) {
+    return checkAge > user.age;
+}
